@@ -8,6 +8,7 @@
     <artifactId>khusnutdinov.bmstu.lab3</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    
     <dependencies>
         <!-- Spark dependency -->
         <dependency>

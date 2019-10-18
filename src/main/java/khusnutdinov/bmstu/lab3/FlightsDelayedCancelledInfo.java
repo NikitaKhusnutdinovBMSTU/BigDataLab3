@@ -46,7 +46,7 @@ public class FlightsDelayedCancelledInfo {
                 row -> {
                     int divided = row.indexOf(",");
 
-                    return new Tuple2<>(Integer.parseInt(row.substring(1, divided)), row.substring(divided + 2, row.length() - 1));
+                    return new Tuple2<>(Integer.parseInt(row.substring(1, divided - 1)), row.substring(divided + 2, row.length() - 1));
                 }
         ).collectAsMap();
 

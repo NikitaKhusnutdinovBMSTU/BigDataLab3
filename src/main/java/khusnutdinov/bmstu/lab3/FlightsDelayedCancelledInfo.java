@@ -22,5 +22,19 @@ public class FlightsDelayedCancelledInfo {
         return new Tuple2<>(new Tuple2<>(flData.getOriginAirportID(), flData.getDestAirportID()), flData);
     });
 
+    JavaPairRDD<Tuple2, AirportPair> combineFlData = flightsData.combineByKey(
+            airport -> new AirportPair(
+                    1,
+                    airport.getCancelled(),
+                    airport.getDelayed(),
+                    airport.getDelay()
+            ),
+            (pair, airport) -> pair.addFlight(
+                    airport.getCancelled(),
+                    airport.getDelayed(),
+                    airport.getDelay()
+            ),
+            AirportPair::addData
+    );
 
 }

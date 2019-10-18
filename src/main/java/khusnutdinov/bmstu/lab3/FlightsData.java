@@ -6,7 +6,7 @@ public class FlightsData implements Serializable {
 
     private static final int DEST_AIRPORT_ID_INDEX = 14;
     private static final int FLIGHT_DELAY_INDEX = 17;
-    private static final int CANCELLED_INDEX =
+    private static final int CANCELLED_INDEX = 
 
 
     private int departAirportID;

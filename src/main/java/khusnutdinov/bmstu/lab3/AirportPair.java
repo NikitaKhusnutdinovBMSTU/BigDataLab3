@@ -33,5 +33,27 @@ public class AirportPair implements Serializable {
         );
     }
 
-    
+    public int getCancelledFlights() {
+        return cancelledFlights;
+    }
+
+    public int getDelayedFlights() {
+        return delayedFlights;
+    }
+
+    public double getMaxDelay() {
+        return maxDelay;
+    }
+
+    public int getTotalFlights() {
+        return totalFlights;
+    }
+
+    public double getDelayPercentage(){
+        return (double)delayedFlights / totalFlights;
+    }
+
+    public double getCancelledPercentage(){
+        return (double)cancelledFlights / totalFlights;
+    }
 }

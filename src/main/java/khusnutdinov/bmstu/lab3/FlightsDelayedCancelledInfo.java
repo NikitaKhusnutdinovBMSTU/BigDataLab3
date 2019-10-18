@@ -15,7 +15,7 @@ public class FlightsDelayedCancelledInfo {
     JavaSparkContext sc = new JavaSparkContext(sparkConf);
 
     JavaRDD<String> flightsCSV = sc.textFile("~/Desktop/hadoop/labs/2/664600583_T_ONTIME_sample.csv");
-    JavaRDD<String> airportsCSV = sc.textFile("");
+    JavaRDD<String> airportsCSV = sc.textFile("~/Desktop/hadoop/labs/2/L_AIRPORT_ID.csv");
 
     JavaPairRDD<Tuple2, FlightsData> flightsData = flightsCSV.mapToPair(in -> {
         FlightsData flData = new FlightsData(in);

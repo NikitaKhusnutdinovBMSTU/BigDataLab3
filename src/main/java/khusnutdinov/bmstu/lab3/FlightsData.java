@@ -20,8 +20,8 @@ public class FlightsData implements Serializable {
         // TODO CONSTS
         this.destAirportID = Integer.parseInt(table[DEST_AIRPORT_ID_INDEX]);
         this.originAirportID = Integer.parseInt(table[ORIGIN_AIRPORT_ID_INDEX]);
-        this.cancelled = table[CANCELLED_INDEX].equals("1.00");
-        if(true){
+        this.cancelled = table[CANCELLED_INDEX].replace(" ", "").equals("1.00");
+        if(cancelled && ){
             delay = ...;
         }else{
             this.delay = 0.0;

@@ -12,23 +12,23 @@ public class FlightsData implements Serializable {
 
     private int originAirportID;
     private int destAirportID;
-    private boolean delayed, cancelled;
+    private int delayed, cancelled;
     private double delay;
 
     public FlightsData(String flData){
         String[] table = flData.split(",");
         this.destAirportID = Integer.parseInt(table[DEST_AIRPORT_ID_INDEX]);
         this.originAirportID = Integer.parseInt(table[ORIGIN_AIRPORT_ID_INDEX]);
-        this.cancelled = table[CANCELLED_INDEX].replace(" ", "").equals("1.00");
-        if(cancelled && table[FLIGHT_DELAY_INDEX].length() != 0){
+        this.cancelled = Integer.parseInt(table[CANCELLED_INDEX]);
+    if(cancelled == 1 && table[FLIGHT_DELAY_INDEX].length() != 0){
             delay = Double.parseDouble(table[FLIGHT_DELAY_INDEX]);
         }else{
             this.delay = 0.0;
         }
         if(delay > 0.0){
-            this.delayed = true;
+            this.delayed = 1;
         }else{
-            this.delayed = false;
+            this.delayed = 0;
         }
     }
 

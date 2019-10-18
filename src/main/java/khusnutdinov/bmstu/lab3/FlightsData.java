@@ -15,13 +15,31 @@ public class FlightsData implements Serializable {
         this.departAirportID = Integer.parseInt(table[...]);
         this.canceled = table[...];
         if(true){
-
+            delay = ...;
         }else{
             this.delay = 0.0;
         }
         if(delay > 0.0){
             this.delayed = true;
+        }else{
+            this.delayed = false;
         }
+    }
+
+    public int getArrivalAirportID(){
+        return arrivalAirportID;
+    }
+
+    public int getDepartAirportID(){
+        return departAirportID;
+    }
+
+    public boolean getCancelled(){
+        return canceled;
+    }
+
+    public boolean getDelayed(){
+        return delayed;
     }
 
 }

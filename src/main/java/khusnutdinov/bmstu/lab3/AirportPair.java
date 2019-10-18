@@ -33,6 +33,12 @@ public class AirportPair implements Serializable {
         );
     }
 
+    public String getInfoString(){
+        String infoString = "".concat("[Max delay: ").concat(Double.toString(maxDelay)).concat(", Delayed flights %: ");
+        infoString = infoString.concat(Double.toString(this.getDelayedFlights())).concat(", Cancelled flights %: ");
+        return infoString.concat(Double.toString(this.getCancelledFlights()));
+    }
+
     public int getCancelledFlights() {
         return cancelledFlights;
     }

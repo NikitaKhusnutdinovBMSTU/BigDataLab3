@@ -21,8 +21,8 @@ public class FlightsData implements Serializable {
         this.destAirportID = Integer.parseInt(table[DEST_AIRPORT_ID_INDEX]);
         this.originAirportID = Integer.parseInt(table[ORIGIN_AIRPORT_ID_INDEX]);
         this.cancelled = table[CANCELLED_INDEX].replace(" ", "").equals("1.00");
-        if(cancelled && ){
-            delay = ...;
+        if(cancelled && table[FLIGHT_DELAY_INDEX].length() != 0){
+            delay = Double.parseDouble(table[FLIGHT_DELAY_INDEX]);
         }else{
             this.delay = 0.0;
         }

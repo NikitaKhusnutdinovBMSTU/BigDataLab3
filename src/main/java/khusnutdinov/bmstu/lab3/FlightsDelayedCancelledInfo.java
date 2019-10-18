@@ -16,5 +16,7 @@ public class FlightsDelayedCancelledInfo {
     JavaRDD<String> flightsData = sc.textFile("Flights");
     JavaRDD<String> airportsData = sc.textFile("Airports");
 
+    
+
 
 }

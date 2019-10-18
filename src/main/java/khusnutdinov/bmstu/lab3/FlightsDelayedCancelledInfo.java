@@ -44,8 +44,9 @@ public class FlightsDelayedCancelledInfo {
 
         Map<Integer, String> pair = airportsCSV.mapToPair(
                 row -> {
-                    String[] table = row.split(",");
-                    return new Tuple2<>(Integer.parseInt(table[0]), table[1]);
+                    int divided = row.indexOf(",");
+
+                    return new Tuple2<>(Integer.parseInt(row.substring(1, divided)), row.substring(divided + 2, row.length() - 1));
                 }
         ).collectAsMap();
 

@@ -4,23 +4,23 @@ import java.io.Serializable;
 
 public class FlightsData implements Serializable {
 
+    private static final int ORIGIN_AIRPORT_ID_INDEX = 11;
     private static final int DEST_AIRPORT_ID_INDEX = 14;
     private static final int FLIGHT_DELAY_INDEX = 17;
     private static final int CANCELLED_INDEX = 19;
-    private static final int DEPART_AIRPORT
 
 
-    private int departAirportID;
-    private int arrivalAirportID;
+    private int originAirportID;
+    private int destAirportID;
     private boolean delayed, cancelled;
     private double delay;
 
     public FlightsData(String flData){
         String[] table = flData.split(",");
         // TODO CONSTS
-        this.arrivalAirportID = Integer.parseInt(table[...]);
-        this.departAirportID = Integer.parseInt(table[...]);
-        this.cancelled = table[...];
+        this.destAirportID = Integer.parseInt(table[DEST_AIRPORT_ID_INDEX]);
+        this.originAirportID = Integer.parseInt(table[ORIGIN_AIRPORT_ID_INDEX]);
+        this.cancelled = table[CANCELLED_INDEX].equals("1.00");
         if(true){
             delay = ...;
         }else{
@@ -33,12 +33,12 @@ public class FlightsData implements Serializable {
         }
     }
 
-    public int getArrivalAirportID(){
-        return arrivalAirportID;
+    public int getDestAirportID(){
+        return destAirportID;
     }
 
-    public int getDepartAirportID(){
-        return departAirportID;
+    public int getOriginAirportID(){
+        return originAirportID;
     }
 
     public double getDelay(){

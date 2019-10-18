@@ -3,9 +3,12 @@ package khusnutdinov.bmstu.lab3;
 import java.io.Serializable;
 
 public class FlightsData implements Serializable {
+
+    private final static 
+
     private int departAirportID;
     private int arrivalAirportID;
-    private boolean delayed, canceled;
+    private boolean delayed, cancelled;
     private double delay;
 
     public FlightsData(String flData){
@@ -13,7 +16,7 @@ public class FlightsData implements Serializable {
         // TODO CONSTS
         this.arrivalAirportID = Integer.parseInt(table[...]);
         this.departAirportID = Integer.parseInt(table[...]);
-        this.canceled = table[...];
+        this.cancelled = table[...];
         if(true){
             delay = ...;
         }else{
@@ -34,8 +37,12 @@ public class FlightsData implements Serializable {
         return departAirportID;
     }
 
+    public double getDelay(){
+        return delay;
+    }
+
     public boolean getCancelled(){
-        return canceled;
+        return cancelled;
     }
 
     public boolean getDelayed(){

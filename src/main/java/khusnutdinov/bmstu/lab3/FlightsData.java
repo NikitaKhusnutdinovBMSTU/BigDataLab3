@@ -15,7 +15,7 @@ public class FlightsData implements Serializable {
     private int delayed, cancelled;
     private double delay;
 
-    public FlightsData(String flData){
+    public FlightsData(String flData) throws NumberFormatException {
         String[] table = flData.split(",");
         this.destAirportID = Integer.parseInt(table[DEST_AIRPORT_ID_INDEX]);
         this.originAirportID = Integer.parseInt(table[ORIGIN_AIRPORT_ID_INDEX]);

@@ -4,7 +4,10 @@ import java.io.Serializable;
 
 public class FlightsData implements Serializable {
 
-    private final static int 
+    private static final int DEST_AIRPORT_ID_INDEX = 14;
+    private static final int FLIGHT_DELAY_INDEX = 17;
+    private static final int 
+
 
     private int departAirportID;
     private int arrivalAirportID;

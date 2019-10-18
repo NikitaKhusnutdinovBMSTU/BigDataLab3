@@ -44,11 +44,11 @@ public class FlightsData implements Serializable {
         return delay;
     }
 
-    public boolean getCancelled(){
+    public int getCancelled(){
         return cancelled;
     }
 
-    public boolean getDelayed(){
+    public int getDelayed(){
         return delayed;
     }
 

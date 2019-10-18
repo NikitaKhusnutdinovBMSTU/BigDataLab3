@@ -9,7 +9,7 @@ import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
-public class FlightsPercentCanceled {
+public class FlightsDelayedCancelledInfo {
     SparkConf sparkConf = new SparkConf();
     JavaSparkContext sc = new JavaSparkContext(sparkConf);
 

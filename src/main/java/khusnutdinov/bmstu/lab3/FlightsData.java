@@ -17,7 +17,6 @@ public class FlightsData implements Serializable {
 
     public FlightsData(String flData){
         String[] table = flData.split(",");
-        // TODO CONSTS
         this.destAirportID = Integer.parseInt(table[DEST_AIRPORT_ID_INDEX]);
         this.originAirportID = Integer.parseInt(table[ORIGIN_AIRPORT_ID_INDEX]);
         this.cancelled = table[CANCELLED_INDEX].replace(" ", "").equals("1.00");

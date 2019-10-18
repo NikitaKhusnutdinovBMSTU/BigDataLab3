@@ -9,7 +9,8 @@ public class FlightsData implements Serializable {
     private double delay;
 
     public FlightsData(String flData){
-        String 
+        String[] table = flData.split(",");
+        
     }
 
 }

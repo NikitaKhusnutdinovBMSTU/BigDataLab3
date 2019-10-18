@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class FlightsData implements Serializable {
 
-    private final static 
+    private final static int 
 
     private int departAirportID;
     private int arrivalAirportID;

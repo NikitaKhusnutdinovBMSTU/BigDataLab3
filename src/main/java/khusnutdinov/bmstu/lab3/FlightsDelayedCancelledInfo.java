@@ -50,7 +50,9 @@ public class FlightsDelayedCancelledInfo {
         Map<Integer, String> pair = airportsCSV.mapToPair(
                 row -> {
                     divider = row.indexOf(DELIMITER);
-                    return new Tuple2<>(Integer.parseInt(unquoteFirstPart(row)), unquoteSecondPart(row));
+                    String airportID = unquoteAirportID(row);
+                    String airportName = unquoteAirportName(row);
+                    return new Tuple2<>(Integer.parseInt(airportID), airportName);
                 }
         ).collectAsMap();
 
@@ -63,12 +65,12 @@ public class FlightsDelayedCancelledInfo {
                 s._2.getInfoString() + "}\n").collect());
     }
 
-    private static String unquoteFirstPart(String str){
+    private static String unquoteAirportID(String str){
         return str.substring(1, divider - 1);
 
     }
 
-    private static String unquoteSecondPart(String str){
+    private static String unquoteAirportName(String str){
         return str.substring(divider + 2, str.length() - 1);
     }
 

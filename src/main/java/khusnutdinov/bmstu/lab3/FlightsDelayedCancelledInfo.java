@@ -15,7 +15,7 @@ public class FlightsDelayedCancelledInfo {
     private final static String FLIGHTS_CSV_PATH = "664600583_T_ONTIME_sample.csv";
     private final static String AIRPORT_CSV_PATH = "L_AIRPORT_ID.csv";
     private final static String DELIMITER = ",";
-    private static int divider = 0;
+    private static int delimiterIndex = 0;
 
     public static void main(String[] args) {
         SparkConf sparkConf = new SparkConf();
@@ -49,7 +49,7 @@ public class FlightsDelayedCancelledInfo {
 
         Map<Integer, String> pair = airportsCSV.mapToPair(
                 row -> {
-                    divider = row.indexOf(DELIMITER);
+                    delimiterIndex = row.indexOf(DELIMITER);
                     String airportID = unquoteAirportID(row);
                     String airportName = unquoteAirportName(row);
                     return new Tuple2<>(Integer.parseInt(airportID), airportName);
@@ -66,12 +66,12 @@ public class FlightsDelayedCancelledInfo {
     }
 
     private static String unquoteAirportID(String str){
-        return str.substring(1, divider - 1);
+        return str.substring(1, delimiterIndex - 1);
 
     }
 
     private static String unquoteAirportName(String str){
-        return str.substring(divider + 2, str.length() - 1);
+        return str.substring(delimiterIndex + 2, str.length() - 1);
     }
 
 }

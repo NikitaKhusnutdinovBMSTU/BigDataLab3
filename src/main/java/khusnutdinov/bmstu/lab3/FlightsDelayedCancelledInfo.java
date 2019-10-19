@@ -1,9 +1,6 @@
 package khusnutdinov.bmstu.lab3;
 
 
-import org.apache.hadoop.io.LongWritable;
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -15,12 +12,15 @@ import java.util.Map;
 
 public class FlightsDelayedCancelledInfo {
 
+    private final static String FLIGHTS_CSV_PATH = "664600583_T_ONTIME_sample.csv";
+    private final static String AIRPORT_CSV_PATH = "L_AIRPORT_ID.csv";
+
     public static void main(String[] args) {
         SparkConf sparkConf = new SparkConf();
         JavaSparkContext sc = new JavaSparkContext(sparkConf);
 
-        JavaRDD<String> flightsCSV = sc.textFile("664600583_T_ONTIME_sample.csv");
-        JavaRDD<String> airportsCSV = sc.textFile("L_AIRPORT_ID.csv");
+        JavaRDD<String> flightsCSV = sc.textFile(FLIGHTS_CSV_PATH);
+        JavaRDD<String> airportsCSV = sc.textFile(AIRPORT_CSV_PATH);
         String filterFlights = flightsCSV.first();
         String filterAirport = airportsCSV.first();
         flightsCSV = flightsCSV.filter(line -> !line.equals(filterFlights));

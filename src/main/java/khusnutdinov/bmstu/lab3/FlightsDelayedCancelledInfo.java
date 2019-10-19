@@ -57,9 +57,9 @@ public class FlightsDelayedCancelledInfo {
 
         System.out.println(combineFlData.map(
                 s ->
-                broadcast.getValue().get((Integer) s._1._1) + "|" +
-                broadcast.getValue().get((Integer) s._1._2) + "|" +
-                s._2.getInfoString() + "\n").collect());
+                "{"+ broadcast.getValue().get((Integer) s._1._1) + " | " +
+                broadcast.getValue().get((Integer) s._1._2) + " | " +
+                s._2.getInfoString() + "}\n").collect());
     }
 
 }

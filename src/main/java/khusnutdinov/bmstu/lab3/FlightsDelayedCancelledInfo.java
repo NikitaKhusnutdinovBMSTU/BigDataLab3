@@ -21,8 +21,8 @@ public class FlightsDelayedCancelledInfo {
 
         JavaRDD<String> flightsCSV = sc.textFile("664600583_T_ONTIME_sample.csv");
         JavaRDD<String> airportsCSV = sc.textFile("L_AIRPORT_ID.csv");
-        String s = airportsCSV.first();
-        airportsCSV = airportsCSV.filter(line -> !line.equals(s));
+        String filter = airportsCSV.first();
+        airportsCSV = airportsCSV.filter(line -> !line.equals(filter));
         JavaPairRDD<Tuple2, FlightsData> flightsData = flightsCSV.mapToPair(in -> {
             FlightsData flData = new FlightsData(in);
             return new Tuple2<>(new Tuple2<>(flData.getOriginAirportID(), flData.getDestAirportID()), flData);

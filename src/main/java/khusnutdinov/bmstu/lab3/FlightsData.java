@@ -23,7 +23,7 @@ public class FlightsData implements Serializable {
     if(cancelled == 0 && table[FLIGHT_DELAY_INDEX].length() != 0){
             delay = Double.parseDouble(table[FLIGHT_DELAY_INDEX]);
         }else{
-            this.delay = 0.0;
+            this.delay = 0;
         }
         if(delay > 0.0){
             this.delayed = 1;

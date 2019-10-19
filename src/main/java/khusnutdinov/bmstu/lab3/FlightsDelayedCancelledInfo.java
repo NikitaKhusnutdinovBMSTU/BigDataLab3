@@ -54,7 +54,7 @@ public class FlightsDelayedCancelledInfo {
         ).collectAsMap();
 
         final Broadcast<Map<Integer, String>> broadcast = sc.broadcast(pair);
-
+        
         System.out.println(combineFlData.map(
                 s ->
                 broadcast.getValue().get((Integer) s._1._1) + "|" +

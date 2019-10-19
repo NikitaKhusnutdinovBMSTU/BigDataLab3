@@ -23,7 +23,7 @@ public class FlightsDelayedCancelledInfo {
         JavaRDD<String> airportsCSV = sc.textFile("L_AIRPORT_ID.csv");
         String filterFlights = flightsCSV.first();
         String filterAirport = airportsCSV.first();
-        flightsCSV = flightsCSV.filter(line -> line.equals(filterFlights));
+        flightsCSV = flightsCSV.filter(line -> !line.equals(filterFlights));
         airportsCSV = airportsCSV.filter(line -> !line.equals(filterAirport));
         JavaPairRDD<Tuple2, FlightsData> flightsData = flightsCSV.mapToPair(in -> {
             FlightsData flData = new FlightsData(in);

@@ -50,7 +50,7 @@ public class FlightsDelayedCancelledInfo {
         Map<Integer, String> pair = airportsCSV.mapToPair(
                 row -> {
                     divider = row.indexOf(DELIMITER);
-                    return new Tuple2<>(Integer.parseInt(unquoteFirstPart(row), Integer.parseInt(unquoteSecondPart(row)));
+                    return new Tuple2<>(Integer.parseInt(unquoteFirstPart(row)), unquoteSecondPart(row));
                 }
         ).collectAsMap();
 

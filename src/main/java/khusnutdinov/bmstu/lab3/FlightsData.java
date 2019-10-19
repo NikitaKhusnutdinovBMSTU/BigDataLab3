@@ -44,7 +44,7 @@ public class FlightsData implements Serializable {
         return delay;
     }
 
-    public double getCancelled(){
+    public int getCancelled(){
         return cancelled;
     }
 

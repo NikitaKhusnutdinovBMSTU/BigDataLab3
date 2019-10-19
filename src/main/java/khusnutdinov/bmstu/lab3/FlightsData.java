@@ -12,14 +12,14 @@ public class FlightsData implements Serializable {
 
     private int originAirportID;
     private int destAirportID;
-    private int delayed;
-    private double cancelled, delay;
+    private int delayed, cancelled;
+    private double delay;
 
     public FlightsData(String flData) throws NumberFormatException {
         String[] table = flData.split(",");
         this.destAirportID = Integer.parseInt(table[DEST_AIRPORT_ID_INDEX]);
         this.originAirportID = Integer.parseInt(table[ORIGIN_AIRPORT_ID_INDEX]);
-        this.cancelled = Double.parseDouble(table[CANCELLED_INDEX]);
+        this.cancelled = (int)(Double.parseDouble(table[CANCELLED_INDEX]));
     if(cancelled == 0 && table[FLIGHT_DELAY_INDEX].length() != 0){
             delay = Double.parseDouble(table[FLIGHT_DELAY_INDEX]);
         }else{

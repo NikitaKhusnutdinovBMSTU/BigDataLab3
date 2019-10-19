@@ -1,0 +1,15 @@
+2019-10-19 17:43:50 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2019-10-19 17:43:50 INFO  SparkContext:54 - Running Spark version 2.3.4
+2019-10-19 17:43:50 INFO  SparkContext:54 - Submitted application: khusnutdinov.bmstu.lab3.FlightsDelayedCancelledInfo
+2019-10-19 17:43:50 INFO  SecurityManager:54 - Changing view acls to: Apple
+2019-10-19 17:43:50 INFO  SecurityManager:54 - Changing modify acls to: Apple
+2019-10-19 17:43:50 INFO  SecurityManager:54 - Changing view acls groups to: 
+2019-10-19 17:43:50 INFO  SecurityManager:54 - Changing modify acls groups to: 
+2019-10-19 17:43:50 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(Apple); groups with view permissions: Set(); users  with modify permissions: Set(Apple); groups with modify permissions: Set()
+2019-10-19 17:43:50 INFO  Utils:54 - Successfully started service 'sparkDriver' on port 63342.
+2019-10-19 17:43:50 INFO  SparkEnv:54 - Registering MapOutputTracker
+2019-10-19 17:43:50 INFO  SparkEnv:54 - Registering BlockManagerMaster
+2019-10-19 17:43:50 INFO  BlockManagerMasterEndpoint:54 - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2019-10-19 17:43:50 INFO  BlockManagerMasterEndpoint:54 - BlockManagerMasterEndpoint up
+2019-10-19 17:43:50 INFO  DiskBlockManager:54 - Created local directory at /private/var/folders/8p/g9d3dsyd3qq3m1_5g_r23y1c0000gn/T/blockmgr-db088782-82c0-4488-9590-1eab59a137af
+2019-10-19 17:43:50 INFO  MemoryStore:54 - MemoryStore started with capacity 366.3 MB
